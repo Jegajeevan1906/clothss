@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { StoreProvider } from './lib/store';
 import { Layout } from './components/Layout';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -52,7 +52,7 @@ import { NotFound } from './pages/NotFound';
 export default function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <HashRouter>
         <ErrorBoundary>
           <Routes>
             <Route element={<Layout />}>
@@ -112,7 +112,7 @@ export default function App() {
             </Route>
           </Routes>
         </ErrorBoundary>
-      </BrowserRouter>
+      </HashRouter>
     </StoreProvider>
   );
 }
