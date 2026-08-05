@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
+
+  /* ===== Royal Saree Boutique Design System ===== */
+  --color-canvas: #FAFAF7;
+  --color-canvas-secondary: #F4EFE6;
+  --color-card: #FFFFFF;
+  --color-search: #F7F2EA;
+  --color-hairline: #E6DCD0;
+  --color-ink: #1C1315;
+  --color-ink-muted: #6E5D61;
+
+  --color-primary: #7A0C1E;
+  --color-primary-hover: #5E0917;
+  --color-accent: #C59B27;
+  --color-discount: #991B1B;
+  --color-success: #15803D;
+
+  --color-matte-black: #1E1719;
+  --color-premium-silver: #E0D7CD;
+  --color-forest-green: #1C4436;
+  --color-premium-brown: #8C5338;
+
+  /* ===== Remapped legacy tokens ===== */
+  --color-graphite-950: #FFFFFF;
+  --color-graphite-900: #FAFAF7;
+  --color-graphite-800: #FFFFFF;
+  --color-graphite-700: #F4EFE6;
+  --color-graphite-600: #D8C8B4;
+  --color-line: #E6DCD0;
+  --color-text: #1C1315;
+  --color-muted: #6E5D61;
+  --color-copper-400: #5E0917;
+  --color-copper-500: #7A0C1E;
+  --color-copper-600: #5E0917;
+  --color-ice-400: #7A0C1E;
+  --color-ice-500: #5E0917;
+  --color-success: #15803D;
+  --color-danger: #991B1B;
+  --color-warning: #C59B27;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.input {
+  border-radius: 9999px;
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-card);
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(122, 12, 30, 0.12);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+.font-mono-data {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #F0EAE1 25%, #F7F3EC 37%, #F0EAE1 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease both;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-toast-in {
+  animation: toast-in 0.25s ease both;
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in {
+  animation: scale-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* thin scrollbar for admin tables etc */
+.scrollbar-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 4px; }
+
+/* Reusable premium shadows */
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(28, 19, 21, 0.04), 0 8px 24px -12px rgba(28, 19, 21, 0.08);
+}
+.shadow-card-hover {
+  box-shadow: 0 2px 8px rgba(122, 12, 30, 0.08), 0 20px 40px -16px rgba(122, 12, 30, 0.15);
+}
+.shadow-pill {
+  box-shadow: 0 2px 4px rgba(122, 12, 30, 0.15), 0 8px 20px -8px rgba(122, 12, 30, 0.35);
+}
